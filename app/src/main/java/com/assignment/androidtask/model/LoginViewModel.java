@@ -40,11 +40,8 @@ public class LoginViewModel extends BaseViewModel<LoginCallbacks> {
             return;
         }
 
-        //login(email, password);
+        login(email, password);
 
-        PrefUtils.setDefaults(Constants.ACCESS_TOKEN, "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2MjljYzUzYTgwNmIyNWFjNGRjYTQ1Y2RkNjgzMzFjOGE3MjMzMzYzYTY1YWVkZjAxZTJlZDJlM2YzZWRmZTk3YmI2MjVhMzc3YTAzMWJiIn0.eyJhdWQiOiIzIiwianRpIjoiMzYyOWNjNTNhODA2YjI1YWM0ZGNhNDVjZGQ2ODMzMWM4YTcyMzMzNjNhNjVhZWRmMDFlMmVkMmUzZjNlZGZlOTdiYjYyNWEzNzdhMDMxYmIiLCJpYXQiOjE1NTY4NzQ2ODIsIm5iZiI6MTU1Njg3NDY4MiwiZXhwIjoxNTg4NDk3MDgyLCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.awsMI04RBzCrvfVwE2At1Q0K-XHpVTeueHQVOKW-Z_f-7p8QG3aJEirmbZWR54ybKrEbaWLLguyj_wAqOwvCB_hSaBZJi8M5t6KvofY1QnkkoQIBqXyPhx2cwdOyzMP7u1nPeEHqA2QJoO_1dJbYxBSLJi-_vKapWNA5rZDzEf4I0HUABnWLzYfH9Pe1uGUa-xdLPZz1PkLlCJeSN0IvPdW4uBzL_HqBn3tAFRQcjGpObWqsCVP3FaYfVjDwJuQYFoP5Tpzcycb2HyANaN0cwmuiCz8jd0A0vRdOAEBZlvqvHxlnI9PDY2TfLJMso649CyNVGECxfHSJNcs2IItduusLfzGQgHfFNtowSTmFuO9aP9K1hdNn7ZhJIYx8uHy2ezhRKTIGUGVaVqBiupJ7lCIJSrodSVhmKdIo8JICorHd7GErIF6maSgPhfCS1693F8r_uWxciY-da919wtUFxJzLw94xpJBbcl2UExuPrk0zXXIwhR3HR0DHLu4XnqAVGKIFJG4X4T_7MtdlosiIFQJiJPQDDFQjoBlgbjk2jSIFoTxVYEOLKGNVFUTqaL0FthGA36jiseeUTmd5t6hCEgrIXSih-IgbvqZDLCjD8hP6zbioOtAmkTNffYVcWUsxYfn18gClOUSE6PLYRnvX67hn2uX0TrX4AM0WZe-oOr0", App.getAppContext());
-        PrefUtils.setDefaults(Constants.COMPANY_ID, String.valueOf(2), App.getAppContext());
-        getCallbacks().openMainActivity();
     }
 
     /*
