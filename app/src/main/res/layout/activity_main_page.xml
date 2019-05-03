@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="mainPageModel"
+            type="com.assignment.androidtask.model.MainViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.MainPage">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/srlOrders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            app:onRefreshListener="@{() -> mainPageModel.onRefresh()}"
+            app:refreshing="@{mainPageModel.isLoading}">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{mainPageModel.hasFailed ? View.GONE: View.VISIBLE }"
+                />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Failed to fetch, please try again later"
+            android:textSize="20sp"
+            android:visibility="@{mainPageModel.hasFailed ? View.VISIBLE : View.GONE}" />
+    </RelativeLayout>
+</layout>
